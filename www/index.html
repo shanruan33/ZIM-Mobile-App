@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Project!</title>
+<script src="https://zimjs.org/cdn/1.2.4/createjs.js"></script>
+<script src="https://zimjs.org/cdn/10.8.0/zim.js"></script>
+
+<script src="scripts/model.js"></script>
+<script src="scripts/view.js"></script>
+<script src="scripts/controller.js"></script>
+
+<script>
+// https://zimjs.com - JavaScript Canvas Framework - Code Creativity!
+
+let stage = null;
+let stageW = null;
+let stageH = null;
+const assets = ["heading.png"];
+const path = "assets/";
+
+const frame = new Frame("full", null, null, light, dark, assets, path);
+frame.on("ready", () => {
+    // put your code here
+    stage = frame.stage;
+    stageW = frame.width;
+    stageH = frame.height;
+    
+    const model = new app.Model();
+    const view = new app.View(model);
+    const controller = new app.Controller(model, view);
+    
+    stage.update();
+});
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
