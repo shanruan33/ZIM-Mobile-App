@@ -19,7 +19,7 @@ var app = function(app) {
             let id = "circle";
             page1.circle = new Circle(50, m.getColor(id), dark)
                 .cur("crosshair")
-                .center(page1.content);
+                .center(page1.content).drag();
             page1.circle.objID = id; // make our own custom id for data!
             
             // page1.circle = new Circle(50, null, dark)
@@ -27,6 +27,7 @@ var app = function(app) {
             //     .center(page1.content);
             // page1.circle.objID = "circle"; // make our own custom id for data!
             // page1.circle.color = m.getColor(page1.circle.objID);
+            
             
             page1.footer = new Label("SHERIDAN IM").addTo(page1);
             
@@ -53,6 +54,7 @@ var app = function(app) {
             page2.rect = new Rectangle(100, 100, m.getColor(id), dark)
                 .center(page2.content);
             page2.rect.objID = id; // make our own custom id for data!
+
                 
             
             page2.footer = new Label("SHERIDAN IM").addTo(page2);
@@ -67,7 +69,10 @@ var app = function(app) {
             );
                             
         
-                
+            
+
+            page1.rect = page2.rect;
+            page1.rect.center(page1.content).mov(0,100);
                 
                 
                 
