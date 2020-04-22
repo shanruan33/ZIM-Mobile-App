@@ -35,8 +35,8 @@ var app = function (app) {
                         props: { rotation: 21 },
                         time: 600,
                         call: () => {
-                            page0.arrowR = asset("https://i.postimg.cc/vmKWnC8d/arrows.png").clone().centerReg(page0.content).mov(380, -50).alp(0).animate({ props: { alpha: 1 }, time: 600, wait: 500, rewind: true, loop: true });
-                            page0.arrowL = page0.arrowR.clone().centerReg(page0.content).sca(-1, 1).mov(-380, -50).alp(0).animate({ props: { alpha: 1 }, time: 600, wait: 500, rewind: true, loop: true });
+                            page0.arrowR = asset("https://i.postimg.cc/vmKWnC8d/arrows.png").clone().centerReg(page0.content).rot(90).mov(0, 330).alp(0).animate({ props: { alpha: 1 }, time: 600, wait: 500, rewind: true, loop: true });
+                            page0.arrowL = page0.arrowR.clone().centerReg(page0.content).sca(-1, 1).rot(90).mov(0, -430).alp(0).animate({ props: { alpha: 1 }, time: 600, wait: 500, rewind: true, loop: true });
 
 
                         }
@@ -111,7 +111,7 @@ var app = function (app) {
             // page transition
 
             const pages = new Pages([
-                { page: page0, swipe: [page1, page1, null, null] },
+                { page: page0, swipe: [null, null, page1, page1] },
                 { page: page1, swipe: [null, null, null, null] }
             ], "slide").addTo();
 
