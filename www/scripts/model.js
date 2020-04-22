@@ -28,7 +28,8 @@ var app = function (app) {
 
             //function
             m.createCard = (cardUrl, pageContent) => {
-                m.card = asset(cardUrl).centerReg(pageContent).top().sca(.5).mov(0, -stageH * 0.03);
+                m.card = asset(cardUrl).centerReg(pageContent).top().mov(0, -stageH * 0.03);
+                m.card.width = stageH * 0.45;
                 return m.card;
             }
 
@@ -59,7 +60,6 @@ var app = function (app) {
 
             }
 
-
             m.createWine = (wine, pageContent) => {
                 var image = asset(wine.img).clone().centerReg(pageContent).sca(.5).pos(-stageW / 5, -stageH / 7, CENTER, CENTER);
                 wine.height = stageH / 2;
@@ -79,6 +79,37 @@ var app = function (app) {
                     fontOptions: "italic"
                 }).centerReg(pageContent).mov(0, stageH / 3.8);
             };
+            m.createSwipeIntro = (swipe, pageContent) => {
+                swipe.disable();
+                m.intro = new Container(stageW, stageH).centerReg(pageContent).top();
+                var left = asset("https://i.postimg.cc/L6DxLp9w/swipeleft.png").centerReg(m.intro).mov(0, stageH / 4).top();
+                left.height = stageH / 12;
+                var intro = new Label({
+                    text: "Swipe card to choose your answer",
+                    size: 20
+                }).centerReg(m.intro).mov(0, stageH / 3);
+
+                left.animate({
+                    props: { x: stageW / 10, alpha: 0 },
+                    time: 700,
+                    loop: true,
+                    loopCount: 2,
+                    call: () => {
+                        var right = asset("https://i.postimg.cc/BnvMCVt6/swiperight.png").centerReg(m.intro).mov(0, stageH / 4).top();
+                        right.height = stageH / 12;
+                        right.animate({
+                            props: { x: stageW * 0.9, alpha: 0 },
+                            time: 700,
+                            loop: true,
+                            loopCount: 2,
+                            call: () => {
+                                intro.animate({ props: { alpha: 0 }, time: 300 });
+                                swipe.enable();
+                            }
+                        });
+                    }
+                });
+            }
         }
     }
 

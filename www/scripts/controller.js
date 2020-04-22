@@ -13,8 +13,8 @@ var app = function (app) {
             var wine;
             var lastCard;
             var sortedGrapes;
-
             var swipe = v.page1.swipe;
+            m.createSwipeIntro(swipe,page);
             swipe.on("swipe", () => {
                 var dir = swipe.direction;
                 var card = m.card;
