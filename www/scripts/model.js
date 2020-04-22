@@ -110,6 +110,10 @@ var app = function (app) {
                     }
                 });
             }
+            m.introBtn = (swipe, pageContent) => {
+                swipe.disable()
+                m.btn = new Button().centerReg(pageContent).mov(0,-stageH/3);
+            }
         }
     }
 

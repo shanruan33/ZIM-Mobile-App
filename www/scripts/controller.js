@@ -14,6 +14,7 @@ var app = function (app) {
             var lastCard;
             var sortedGrapes;
             var swipe = v.page1.swipe;
+            m.introBtn(swipe,page);
             m.createSwipeIntro(swipe,page);
             swipe.on("swipe", () => {
                 var dir = swipe.direction;

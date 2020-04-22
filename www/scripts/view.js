@@ -110,9 +110,9 @@ var app = function (app) {
 
             // page transition
 
-            const pages = new Pages([page0,page1
-                // { page: page0, swipe: [null, null, page1, page1] },
-                // { page: page1, swipe: [null, null, null, null] }
+            const pages = new Pages([
+                { page: page0, swipe: [null, null, page1, page1] },
+                { page: page1, swipe: [null, null, null, null] }
             ], "fade").addTo();
 
 
