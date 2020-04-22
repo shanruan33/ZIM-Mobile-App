@@ -63,6 +63,7 @@ var app = function (app) {
             page1.content = new Container(stageW, stageH).addTo(page1);
             page1.back = new Circle(stageH, white).centerReg(page1).mov(-stageH + stageW / 15, stageH / 20).bot();
             page1.swipe = new Swipe(stage, 20, 100);
+            page1.swipe.disable();
 
 
             //swipe background
