@@ -13,17 +13,19 @@ var app = function (app) {
             const page1 = v.page1 = new Container(stageW, stageH);
 
             //page1.header = new Rectangle(800, 10, white).addTo(page1);
-            //    = asset("heading.png").clone().addTo(page1);
+            //   
 
-            page1.content = new Container(stageW,stageH).addTo(page1);
+            page1.content = new Container(stageW, stageH).addTo(page1);
             page1.back = new Circle(stageH, white).centerReg(page1).mov(-stageH + stageW / 15, stageH / 20).bot();
             page1.swipe = new Swipe(stage, 20, 100);
 
 
             //swipe 
-            page1.rectangle2 = new Rectangle(stageW*0.8, stageW*0.8, white, black)
-                .centerReg(page1.content).mov(0, -stageH*0.03).alp(0); // centers reg and adds to container (stage) in the center
+            page1.rectangle2 = new Rectangle(stageW * 0.8, stageW * 0.8, white, black)
+                .centerReg(page1.content).mov(0, -stageH * 0.03).alp(0);
             page1.rectangle2.cursor = "pointer";
+
+
 
 
             //swipe ------- end
@@ -33,10 +35,10 @@ var app = function (app) {
 
             v.manager.add(
                 new Layout(page1, [
-                   // { object: page1.header },
+                    // { object: page1.header },
                     { object: page1.content },
-                   // { object: page1.footer }
-                    ], 0, '#ffe8da', true, null, stage)
+                    // { object: page1.footer }
+                ], 0, '#ffe8da', true, null, stage)
                 // ], 0, '#ffe8da', true, new Shape(), stage)
             );
 
