@@ -3,6 +3,7 @@ var app = function (app) {
     app.Controller = class {
         constructor(m, v) {
             zogb("hi from Controller");
+            
             //cards swipe
             var index = 0;
             var length = m.cards.length;
@@ -14,8 +15,7 @@ var app = function (app) {
             var lastCard;
             var sortedGrapes;
             var swipe = v.page1.swipe;
-            m.introBtn(swipe,page);
-            m.createSwipeIntro(swipe,page);
+            //m.createSwipeIntro(swipe,page);
             swipe.on("swipe", () => {
                 var dir = swipe.direction;
                 var card = m.card;

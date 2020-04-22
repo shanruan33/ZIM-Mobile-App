@@ -36,7 +36,8 @@ var app = function (app) {
             m.createLastQ = (sortedGrapes, pageContent) => {
                 var grape = sortedGrapes[0];
                 var url = grape.url;
-                m.card = asset(url).centerReg(pageContent).top().sca(.5).mov(0, -stageH * 0.03);
+                m.card = asset(url).centerReg(pageContent).top().mov(0, -stageH * 0.03);
+                m.card.width = stageH * 0.45;
                 return m.card;
             }
 
@@ -92,6 +93,7 @@ var app = function (app) {
                 left.animate({
                     props: { x: stageW / 10, alpha: 0 },
                     time: 700,
+                    wait:500,
                     loop: true,
                     loopCount: 2,
                     call: () => {
@@ -109,10 +111,6 @@ var app = function (app) {
                         });
                     }
                 });
-            }
-            m.introBtn = (swipe, pageContent) => {
-                swipe.disable()
-                m.btn = new Button().centerReg(pageContent).mov(0,-stageH/3);
             }
         }
     }
