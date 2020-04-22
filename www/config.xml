@@ -5,14 +5,14 @@
         id        = "com.danzen.touchy"
         version   = "3.0.1">
 
-    <name>Touchy</name>
+    <name>Which Wine</name>
 
     <description>
-        Mobile game to touch a target on your opponent's screen.
+        Fun wine preference quiz and recommandation.
     </description>
 
     <author href="http://danzen.com" email="support@danzen.com">
-       Dan Zen
+       Dan Zen, Shan Ruan
     </author>
 
     <!--
